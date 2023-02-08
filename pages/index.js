@@ -3,10 +3,14 @@ import Image from "next/image";
 import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
 import Button from "@mui/material/Button";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const router = useRouter();
+
   return (
     <>
       <Head>
@@ -18,33 +22,34 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.description}>
           <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{" "}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
+            <Link href="/">
+     
+                By{" "}
+                <Image
+                  src="/logo.png"
+                  alt="Vercel Logo"
+                  className={styles.vercelLogo}
+                  width={150}
+                  height={150}
+                  priority
+                />
+        
+            </Link>
           </div>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>pages/index.js</code>
-          </p>
+          <p>Welcome to Tami&apos;s website</p>
         </div>
 
         <div className={styles.center}>
-          <Button>Join</Button>
+          <Link href="/join"><Button variant="contained">Join</Button></Link>
+          
           <div className={styles.thirteen}>
-            <Button>Login</Button>
+            <Link href="/login"><Button variant="contained">Login</Button></Link>
+            
           </div>
+        </div>
+
+        <div>
+          <p>tami</p>
         </div>
       </main>
     </>
