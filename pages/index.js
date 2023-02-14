@@ -23,28 +23,33 @@ export default function Home() {
         <div className={styles.description}>
           <div>
             <Link href="/">
-     
-                By{" "}
-                <Image
-                  src="/logo.png"
-                  alt="Vercel Logo"
-                  className={styles.vercelLogo}
-                  width={150}
-                  height={150}
-                  priority
-                />
-        
+              By{" "}
+              <Image
+                src="/logo.png"
+                alt="logo"
+                className={styles.vercelLogo}
+                width={150}
+                height={150}
+                priority
+              />
             </Link>
           </div>
           <p>Welcome to Tami&apos;s website</p>
         </div>
 
         <div className={styles.center}>
-          <Link href="/join"><Button variant="contained">Join</Button></Link>
-          
+          <Link href="/join">
+            <Button variant="contained" sx={{ backgroundColor: "#94B49F"}}>
+              Join
+            </Button>
+          </Link>
+
           <div className={styles.thirteen}>
-            <Link href="/login"><Button variant="contained">Login</Button></Link>
-            
+            <Link href="/login">
+              <Button variant="contained" sx={{ backgroundColor: "#94B49F" }}>
+                Login
+              </Button>
+            </Link>
           </div>
         </div>
 

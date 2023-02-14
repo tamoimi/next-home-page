@@ -104,6 +104,9 @@
   filter: blur(45px);
   transform: translateZ(0);
 }
+.center button:hover {
+  background-color: #798f80 ;
+}
 
 .logo,
 .thirteen {
