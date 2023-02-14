@@ -5,6 +5,11 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
+import { Divider } from "@mui/material";
+import IconButton from "@mui/material/IconButton";
+import GoogleIcon from "@mui/icons-material/Google";
+import AppleIcon from "@mui/icons-material/Apple";
+import TwitterIcon from "@mui/icons-material/Twitter";
 
 const Join = () => {
   return (
@@ -14,7 +19,7 @@ const Join = () => {
         elevation={3}
         sx={{
           width: 600,
-          height: 620,
+          height: 740,
           p: 3,
           margin: "0 auto",
         }}
@@ -83,9 +88,10 @@ const Join = () => {
               direction={"row"}
               justifyContent={"center"}
               alignItems="center"
-              sx={{ mb: 3 }}
             >
               <InputLabel htmlFor="password" sx={{ width: 100 }}>
+                confirm
+                <br />
                 password
               </InputLabel>
               <TextField id="password" size="small"></TextField>
@@ -96,10 +102,42 @@ const Join = () => {
               variant="contained"
               sx={{ width: 340, margin: "30px auto", color: "white" }}
             >
-              done
+              Join us
             </Button>
           </Stack>
         </form>
+        <Divider spacing={1}>OR</Divider>
+        <Stack justifyContent={"center"} sx={{ py: 3 }}>
+          <Typography sx={{ fontSize: 14, textAlign: "center", mb: 3 }}>
+            Join Tami&apos;s website with your favorite social media accout🐠
+          </Typography>
+          <Stack direction={"row"} justifyContent="center" sx={{ gap: 5 }}>
+            <Stack>
+              <IconButton aria-label="google">
+                <GoogleIcon />
+              </IconButton>
+              <Typography sx={{ fontSize: 12 }}>Google</Typography>
+            </Stack>
+            <Stack>
+              <IconButton aria-label="apple">
+                <AppleIcon />
+              </IconButton>
+              <Typography sx={{ fontSize: 12 }}>Apple</Typography>
+            </Stack>
+            <Stack>
+              <IconButton aria-label="twitter">
+                <TwitterIcon />
+              </IconButton>
+              <Typography sx={{ fontSize: 12 }}>Twitter</Typography>
+            </Stack>
+            <Stack>
+              <IconButton aria-label="google">
+                <GoogleIcon />
+              </IconButton>
+              <Typography sx={{ fontSize: 12 }}>Google</Typography>
+            </Stack>
+          </Stack>
+        </Stack>
       </Paper>
     </>
   );
