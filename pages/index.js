@@ -19,27 +19,25 @@ export default function Home() {
       <MainLayout />
       <Stack justifyContent="center" alignItems="center">
         <iframe
-          src="https://giphy.com/embed/3o7abAHdYvZdBNnGZq"
+          src="https://giphy.com/embed/Cb2rEzz77lex8xBNSJ"
           width="480"
           height="480"
+          frameBorder="0"
+          class="giphy-embed"
           allowFullScreen
         ></iframe>
         <p>
-          <a href="https://giphy.com/gifs/dog-puppy-dottie-3o7abAHdYvZdBNnGZq"></a>
+          <a href="https://giphy.com/gifs/ocean-shark-island-Cb2rEzz77lex8xBNSJ"></a>
         </p>
       </Stack>
       <div className={styles.center}>
         <Link href="/home-pages/join">
-          <Button variant="contained" >
-            Join
-          </Button>
+          <Button variant="contained">Join</Button>
         </Link>
 
         <div className={styles.thirteen}>
           <Link href="/home-pages/login">
-            <Button variant="contained">
-              Login
-            </Button>
+            <Button variant="contained">Login</Button>
           </Link>
         </div>
       </div>
