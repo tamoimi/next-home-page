@@ -22,8 +22,6 @@ export default function Home() {
           src="https://giphy.com/embed/Cb2rEzz77lex8xBNSJ"
           width="480"
           height="480"
-          frameBorder="0"
-          class="giphy-embed"
           allowFullScreen
         ></iframe>
         <p>
