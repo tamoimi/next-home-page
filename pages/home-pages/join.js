@@ -164,7 +164,7 @@ const Join = () => {
                   <ErrorMessage>{errors.confirmPassword?.message}</ErrorMessage>
                 }
                 {...register("confirmPassword", {
-                  required: "Please enter your confirmPassword 😪",
+                  required: "Please check your password 😪",
                 })}
               ></TextField>
             </Stack>
