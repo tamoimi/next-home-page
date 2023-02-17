@@ -41,53 +41,16 @@ const Login = () => {
         elevation={3}
         sx={{
           width: 600,
-          height: 740,
+          height: 600,
           p: 3,
           margin: "0 auto",
         }}
       >
-        <Typography sx={{ textAlign: "center", pt: 1, pb: 4 }}>
-          Log In With
+        <Typography sx={{ textAlign: "center", pt: 3, pb: 6 }}>
+          Log In 🐢
         </Typography>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Stack>
-            <Stack
-              direction={"row"}
-              justifyContent={"center"}
-              alignItems="center"
-              sx={{ mb: 3 }}
-            >
-              <InputLabel htmlFor="name" sx={{ width: 100 }}>
-                name
-              </InputLabel>
-              <TextField
-                id="name"
-                size="small"
-                helperText={<ErrorMessage>{errors.name?.message}</ErrorMessage>}
-                {...register("name", { required: "Please enter your name 😪" })}
-              ></TextField>
-            </Stack>
-
-            <Stack
-              direction={"row"}
-              justifyContent={"center"}
-              alignItems="center"
-              sx={{ mb: 3 }}
-            >
-              <InputLabel htmlFor="birth" sx={{ width: 100 }}>
-                birth
-              </InputLabel>
-              <TextField
-                id="birth"
-                size="small"
-                helperText={
-                  <ErrorMessage>{errors.birth?.message}</ErrorMessage>
-                }
-                {...register("birth", {
-                  required: "Please enter your birth 😪",
-                })}
-              ></TextField>
-            </Stack>
             <Stack
               direction={"row"}
               justifyContent={"center"}
@@ -112,23 +75,6 @@ const Login = () => {
               direction={"row"}
               justifyContent={"center"}
               alignItems="center"
-              sx={{ mb: 3 }}
-            >
-              <InputLabel htmlFor="id" sx={{ width: 100 }}>
-                ID
-              </InputLabel>
-              <TextField
-                id="id"
-                size="small"
-                helperText={<ErrorMessage>{errors.id?.message}</ErrorMessage>}
-                {...register("id", { required: "Please enter your id 😪" })}
-              ></TextField>
-            </Stack>
-            <Stack
-              direction={"row"}
-              justifyContent={"center"}
-              alignItems="center"
-              sx={{ mb: 3 }}
             >
               <InputLabel htmlFor="password" sx={{ width: 100 }}>
                 password
@@ -144,33 +90,12 @@ const Login = () => {
                 })}
               ></TextField>
             </Stack>
-            <Stack
-              direction={"row"}
-              justifyContent={"center"}
-              alignItems="center"
-            >
-              <InputLabel htmlFor="confirmPassword" sx={{ width: 100 }}>
-                confirm
-                <br />
-                password
-              </InputLabel>
-              <TextField
-                id="confirmPassword"
-                size="small"
-                helperText={
-                  <ErrorMessage>{errors.confirmPassword?.message}</ErrorMessage>
-                }
-                {...register("confirmPassword", {
-                  required: "Please check your password 😪",
-                })}
-              ></TextField>
-            </Stack>
           </Stack>
           <Stack>
             <Button
               type="submit"
               variant="contained"
-              sx={{ width: 340, margin: "30px auto", color: "white" }}
+              sx={{ width: 340, margin: "40px auto", color: "white" }}
               disabled={!isValid}
             >
               Join us
@@ -178,9 +103,9 @@ const Login = () => {
           </Stack>
         </form>
         <Divider spacing={1}>OR</Divider>
-        <Stack justifyContent={"center"} sx={{ py: 3 }}>
+        <Stack justifyContent={"center"} sx={{ py: 5 }}>
           <Typography sx={{ fontSize: 14, textAlign: "center", mb: 3 }}>
-            Join Tami&apos;s website with your favorite social media accout🐠
+             Login Tami&apos;s website with your favorite social media accout🐠
           </Typography>
           <Stack direction={"row"} justifyContent="center" sx={{ gap: 5 }}>
             <Stack>
