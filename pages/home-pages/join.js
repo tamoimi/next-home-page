@@ -5,21 +5,36 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
-import { Divider } from "@mui/material";
+import { Divider, makeStyles } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import GoogleIcon from "@mui/icons-material/Google";
 import AppleIcon from "@mui/icons-material/Apple";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { useForm } from "react-hook-form";
+import styled from "@emotion/styled";
 
 const Join = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting, isDirty },
-  } = useForm();
+    formState: { errors, isSubmitting, isDirty, isValid },
+  } = useForm({
+    mode: "onChange",
+    defaultValues: {
+      name: "",
+      birth: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+    },
+  });
 
   const onSubmit = (data) => console.log("data", data);
+
+  const ErrorMessage = styled("span")({
+    position: "absolute",
+    // bottom: ,
+  });
 
   return (
     <>
@@ -51,13 +66,11 @@ const Join = () => {
               <TextField
                 id="name"
                 size="small"
-                aria-invalid={
-                  !isDirty ? undefined : errors.name ? "true" : "false"
-                }
+                helperText={<ErrorMessage>{errors.name?.message}</ErrorMessage>}
+                // helperText={errors.name && <span style={{padding: 0}}>{errors.name.message}</span>}
                 {...register("name", { required: "Please enter your name😪" })}
               ></TextField>
             </Stack>
-            {/* {errors.name && <p>{errors.name?.message}</p>} */}
 
             <Stack
               direction={"row"}
@@ -118,9 +131,10 @@ const Join = () => {
           </Stack>
           <Stack>
             <Button
+              type="submit"
               variant="contained"
               sx={{ width: 340, margin: "30px auto", color: "white" }}
-              disabled={isSubmitting}
+              disabled={!isValid}
             >
               Join us
             </Button>
