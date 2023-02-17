@@ -33,7 +33,7 @@ const Join = () => {
 
   const ErrorMessage = styled("span")({
     position: "absolute",
-    // bottom: ,
+    color: "#E96479",
   });
 
   return (
@@ -67,8 +67,7 @@ const Join = () => {
                 id="name"
                 size="small"
                 helperText={<ErrorMessage>{errors.name?.message}</ErrorMessage>}
-                // helperText={errors.name && <span style={{padding: 0}}>{errors.name.message}</span>}
-                {...register("name", { required: "Please enter your name😪" })}
+                {...register("name", { required: "Please enter your name 😪" })}
               ></TextField>
             </Stack>
 
@@ -81,7 +80,16 @@ const Join = () => {
               <InputLabel htmlFor="birth" sx={{ width: 100 }}>
                 birth
               </InputLabel>
-              <TextField id="birth" size="small"></TextField>
+              <TextField
+                id="birth"
+                size="small"
+                helperText={
+                  <ErrorMessage>{errors.birth?.message}</ErrorMessage>
+                }
+                {...register("birth", {
+                  required: "Please enter your birth 😪",
+                })}
+              ></TextField>
             </Stack>
             <Stack
               direction={"row"}
@@ -92,7 +100,16 @@ const Join = () => {
               <InputLabel htmlFor="email" sx={{ width: 100 }}>
                 email
               </InputLabel>
-              <TextField id="email" size="small"></TextField>
+              <TextField
+                id="email"
+                size="small"
+                helperText={
+                  <ErrorMessage>{errors.email?.message}</ErrorMessage>
+                }
+                {...register("email", {
+                  required: "Please enter your email 😪",
+                })}
+              ></TextField>
             </Stack>
             <Stack
               direction={"row"}
@@ -103,7 +120,12 @@ const Join = () => {
               <InputLabel htmlFor="id" sx={{ width: 100 }}>
                 ID
               </InputLabel>
-              <TextField id="id" size="small"></TextField>
+              <TextField
+                id="id"
+                size="small"
+                helperText={<ErrorMessage>{errors.id?.message}</ErrorMessage>}
+                {...register("id", { required: "Please enter your id 😪" })}
+              ></TextField>
             </Stack>
             <Stack
               direction={"row"}
@@ -114,19 +136,37 @@ const Join = () => {
               <InputLabel htmlFor="password" sx={{ width: 100 }}>
                 password
               </InputLabel>
-              <TextField id="password" size="small"></TextField>
+              <TextField
+                id="password"
+                size="small"
+                helperText={
+                  <ErrorMessage>{errors.password?.message}</ErrorMessage>
+                }
+                {...register("password", {
+                  required: "Please enter your password 😪",
+                })}
+              ></TextField>
             </Stack>
             <Stack
               direction={"row"}
               justifyContent={"center"}
               alignItems="center"
             >
-              <InputLabel htmlFor="password" sx={{ width: 100 }}>
+              <InputLabel htmlFor="confirmPassword" sx={{ width: 100 }}>
                 confirm
                 <br />
                 password
               </InputLabel>
-              <TextField id="password" size="small"></TextField>
+              <TextField
+                id="confirmPassword"
+                size="small"
+                helperText={
+                  <ErrorMessage>{errors.confirmPassword?.message}</ErrorMessage>
+                }
+                {...register("confirmPassword", {
+                  required: "Please enter your confirmPassword 😪",
+                })}
+              ></TextField>
             </Stack>
           </Stack>
           <Stack>
