@@ -44,12 +44,12 @@ const Join = () => {
         elevation={3}
         sx={{
           width: 600,
-          height: 740,
+          height: 600,
           p: 3,
           margin: "0 auto",
         }}
       >
-        <Typography sx={{ textAlign: "center", pt: 1, pb: 4 }}>
+        <Typography sx={{ textAlign: "center", pt: 3, pb: 6 }}>
           Create your new account🐳
         </Typography>
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -117,22 +117,6 @@ const Join = () => {
               alignItems="center"
               sx={{ mb: 3 }}
             >
-              <InputLabel htmlFor="id" sx={{ width: 100 }}>
-                ID
-              </InputLabel>
-              <TextField
-                id="id"
-                size="small"
-                helperText={<ErrorMessage>{errors.id?.message}</ErrorMessage>}
-                {...register("id", { required: "Please enter your id 😪" })}
-              ></TextField>
-            </Stack>
-            <Stack
-              direction={"row"}
-              justifyContent={"center"}
-              alignItems="center"
-              sx={{ mb: 3 }}
-            >
               <InputLabel htmlFor="password" sx={{ width: 100 }}>
                 password
               </InputLabel>
@@ -173,45 +157,13 @@ const Join = () => {
             <Button
               type="submit"
               variant="contained"
-              sx={{ width: 340, margin: "30px auto", color: "white" }}
+              sx={{ width: 340, margin: "50px auto", color: "white" }}
               disabled={!isValid}
             >
               Join us
             </Button>
           </Stack>
         </form>
-        <Divider spacing={1}>OR</Divider>
-        <Stack justifyContent={"center"} sx={{ py: 3 }}>
-          <Typography sx={{ fontSize: 14, textAlign: "center", mb: 3 }}>
-            Join Tami&apos;s website with your favorite social media accout🐠
-          </Typography>
-          <Stack direction={"row"} justifyContent="center" sx={{ gap: 5 }}>
-            <Stack>
-              <IconButton aria-label="google">
-                <GoogleIcon />
-              </IconButton>
-              <Typography sx={{ fontSize: 12 }}>Google</Typography>
-            </Stack>
-            <Stack>
-              <IconButton aria-label="apple">
-                <AppleIcon />
-              </IconButton>
-              <Typography sx={{ fontSize: 12 }}>Apple</Typography>
-            </Stack>
-            <Stack>
-              <IconButton aria-label="twitter">
-                <TwitterIcon />
-              </IconButton>
-              <Typography sx={{ fontSize: 12 }}>Twitter</Typography>
-            </Stack>
-            <Stack>
-              <IconButton aria-label="google">
-                <GoogleIcon />
-              </IconButton>
-              <Typography sx={{ fontSize: 12 }}>Google</Typography>
-            </Stack>
-          </Stack>
-        </Stack>
       </Paper>
     </>
   );
