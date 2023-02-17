@@ -10,11 +10,21 @@ import IconButton from "@mui/material/IconButton";
 import GoogleIcon from "@mui/icons-material/Google";
 import AppleIcon from "@mui/icons-material/Apple";
 import TwitterIcon from "@mui/icons-material/Twitter";
+import { useForm } from "react-hook-form";
 
 const Join = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting, isDirty },
+  } = useForm();
+
+  const onSubmit = (data) => console.log("data", data);
+
   return (
     <>
       <MainLayout />
+
       <Paper
         elevation={3}
         sx={{
@@ -24,10 +34,10 @@ const Join = () => {
           margin: "0 auto",
         }}
       >
-        <Typography sx={{ textAlign: "center", pt: 2, pb: 5 }}>
+        <Typography sx={{ textAlign: "center", pt: 1, pb: 4 }}>
           Create your new account🐳
         </Typography>
-        <form>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <Stack>
             <Stack
               direction={"row"}
@@ -38,8 +48,17 @@ const Join = () => {
               <InputLabel htmlFor="name" sx={{ width: 100 }}>
                 name
               </InputLabel>
-              <TextField id="name" size="small"></TextField>
+              <TextField
+                id="name"
+                size="small"
+                aria-invalid={
+                  !isDirty ? undefined : errors.name ? "true" : "false"
+                }
+                {...register("name", { required: "Please enter your name😪" })}
+              ></TextField>
             </Stack>
+            {/* {errors.name && <p>{errors.name?.message}</p>} */}
+
             <Stack
               direction={"row"}
               justifyContent={"center"}
@@ -101,6 +120,7 @@ const Join = () => {
             <Button
               variant="contained"
               sx={{ width: 340, margin: "30px auto", color: "white" }}
+              disabled={isSubmitting}
             >
               Join us
             </Button>
