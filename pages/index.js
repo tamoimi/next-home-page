@@ -5,9 +5,10 @@ import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
 import Button from "@mui/material/Button";
 import { useRouter } from "next/router";
-import Link from "next/link";
 import MainLayout from "@/components/MainLayout";
 import Stack from "@mui/material/Stack";
+import Link from "next/link";
+import { Typography } from "@mui/material";
 
 const inter = Inter({ subsets: ["latin"] });
 
