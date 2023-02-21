@@ -5,19 +5,17 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
-import { Divider, makeStyles } from "@mui/material";
-import IconButton from "@mui/material/IconButton";
-import GoogleIcon from "@mui/icons-material/Google";
-import AppleIcon from "@mui/icons-material/Apple";
-import TwitterIcon from "@mui/icons-material/Twitter";
 import { useForm } from "react-hook-form";
 import styled from "@emotion/styled";
+import { useRef } from "react";
 
 const Join = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting, isDirty, isValid },
+    watch,
+    setError,
+    formState: { errors, isValid },
   } = useForm({
     mode: "onChange",
     defaultValues: {
@@ -28,6 +26,9 @@ const Join = () => {
       confirmPassword: "",
     },
   });
+
+  const password = useRef({});
+  password.current = watch("password", "");
 
   const onSubmit = (data) => console.log("data", data);
 
@@ -148,7 +149,9 @@ const Join = () => {
                   <ErrorMessage>{errors.confirmPassword?.message}</ErrorMessage>
                 }
                 {...register("confirmPassword", {
-                  required: "Please check your password 😪",
+                  validate: (value) =>
+                    value === password.current || "Please check your password",
+                  required: "Please enter your  comfirm password 😪",
                 })}
               ></TextField>
             </Stack>
