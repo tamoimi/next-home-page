@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 import MainLayout from "@/components/MainLayout";
 import Stack from "@mui/material/Stack";
 import Link from "next/link";
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,17 +29,23 @@ export default function Home() {
           <a href="https://giphy.com/gifs/ocean-shark-island-Cb2rEzz77lex8xBNSJ"></a>
         </p>
       </Stack>
-      <div className={styles.center}>
+      <Box className={styles.center}>
         <Link href="/home-pages/join">
           <Button variant="contained">Join</Button>
         </Link>
 
-        <div className={styles.thirteen}>
+        <Box className={styles.thirteen}>
           <Link href="/home-pages/login">
             <Button variant="contained">Login</Button>
           </Link>
-        </div>
-      </div>
+        </Box>
+      </Box>
+
+      <Stack direction={"row"} justifyContent={"center"}>
+        <Link href="##">
+        <Button>Click here to see more 🐸</Button>
+        </Link>
+      </Stack>
     </>
   );
 }

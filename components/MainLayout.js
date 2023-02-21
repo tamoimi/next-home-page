@@ -21,7 +21,6 @@ const MainLayout = () => {
 
         <Typography>Welcome to Tami&apos;s website</Typography>
       </Stack>
-
     </Box>
   );
 };
