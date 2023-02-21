@@ -27,10 +27,24 @@ const Join = () => {
     },
   });
 
+  const postUsers = async (data) => {
+    console.log("data", data);
+    const response = await (
+      await fetch("/api/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          data,
+        }),
+      })
+    ).json();
+    console.log("response", response);
+  };
+
   const password = useRef({});
   password.current = watch("password", "");
-
-  const onSubmit = (data) => console.log("data", data);
 
   const ErrorMessage = styled("span")({
     position: "absolute",
@@ -53,7 +67,7 @@ const Join = () => {
         <Typography sx={{ textAlign: "center", pt: 3, pb: 6 }}>
           Create your new account🐳
         </Typography>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(postUsers)}>
           <Stack>
             <Stack
               direction={"row"}
